@@ -10,8 +10,9 @@
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
             var $tweetDate = $('<div></div>');
+            var minutes = convertTime(tweet.created_at);
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
-            $tweetDate.text(tweet.created_at);
+            $tweetDate.text(minutes + " minutes ago");
             $tweet.appendTo(".tweetList");
             $tweetDate.prependTo(".tweetDates")
             index -= 1;
@@ -23,6 +24,14 @@
         function removeTweets (){
           $(".tweetList").empty();
           $(".tweetDates").empty();
+        }
+
+        function convertTime(date){
+          var then=date.getTime();
+          var now=new Date();
+          now = now.getTime();
+          var seconds = Math.floor((now-then)/60000);     //This is in seconds
+          return seconds;
         }
 
         $('.refresh').click(function(event){

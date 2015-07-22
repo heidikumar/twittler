@@ -44,8 +44,44 @@ table {
 
 /*----END--OF--DEFAULT--CLEAR------*/
 
-.displayTweets {
-	background-color: #e6e4e1;
-	height: 500px;
-	width: 500px;
+header {
+	background-color: #af8ca4;
+	padding: 10px;
 }
+
+.main:before,
+.main:after {
+	content: "";
+	display: table;
+}
+
+.main:after{
+	clear: both;
+}
+
+.main {
+	clear: both;
+	*zoom: 1;
+	background-color: #cbcbcb;
+}
+
+section {
+	display: inline-block;
+	float: left;
+	background-color: #6792BC;
+	width: 65%;
+	margin: 0 1.5%;
+}
+
+aside {
+	display: inline-block;
+	float: right;
+	background-color: #669999;
+	width: 25%;
+	margin: 0 1.5%;
+}
+
+footer {
+	
+}
+

@@ -9,7 +9,7 @@
             var tweet = streams.home[index];
             var $tweet = $('<div></div>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message + " " + tweet.created_at);
-            $tweet.appendTo($body);
+            $tweet.appendTo(".displayTweets");
             index -= 1;
           }
         };

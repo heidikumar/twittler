@@ -3,7 +3,7 @@
   <head>
     <script src="jquery.js"></script>
     <script src="data_generator.js"></script>
-    <script src="twittler.css"></script>
+    <link rel="stylesheet" type="text/css" href="twittler.css">
   </head>
   <body>
     <header>
@@ -12,19 +12,23 @@
       <button type="button" class="refresh">More Tweets</button>
       <button type="button" class="clear">Clear Tweets</button>
     </header>
+    <div class="main">
+      <section class = "displayTweets">
+        <h3>Current Tweets</h3>
+        <!-- Gotta move the tweets to here from the body. Also need to reverse order tweets appear so the new ones are on top. According to spects, need to add timestamps. I'd like timestamps to show in the same element area, but with a different CSS style.-->
+      </section>
 
-    <div class = "displayTweets">
-      <!-- Gotta move the tweets to here from the body. Also need to reverse order tweets appear so the new ones are on top. According to spects, need to add timestamps. I'd like timestamps to show in the same element area, but with a different CSS style.-->
+      <aside class= "userTweets">
+        <h3>User Tweets</h3>
+        <!-- this is where I will display the data for the user clicked on-->
+      </aside>
     </div>
 
-    <aside>
-      <!-- this is where I will display the data for the user clicked on-->
-    </aside>
-
-    <footer>
+    <footer class="addTweet">
+      <h4>Add a tweet!</h4>
       <!-- I want this to be visible even with scrolling. This will be the form to enter new tweets. -->
     </footer>
 
-    <!--<script src="script.js"></script> -->
+    <script src="script.js"></script>
   </body>
 </html>

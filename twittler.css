@@ -44,9 +44,15 @@ table {
 
 /*----END--OF--DEFAULT--CLEAR------*/
 
+body{
+	background-color: #cbcbcb;
+}
+
 header {
 	background-color: #af8ca4;
 	padding: 10px;
+	border-radius: 25px;
+	margin: 10px;
 }
 
 .main:before,
@@ -69,19 +75,30 @@ section {
 	display: inline-block;
 	float: left;
 	background-color: #6792BC;
-	width: 65%;
+	width: 71%;
+	height: 650px;
 	margin: 0 1.5%;
+	border-radius: 25px;
+	padding: 15px;
+	overflow: auto;
 }
 
 aside {
 	display: inline-block;
 	float: right;
 	background-color: #669999;
-	width: 25%;
-	margin: 0 1.5%;
+	width: 20%;
+	height: 650px;
+	margin-right: 1%;
+	border-radius: 25px;
+	padding: 15px;
 }
 
 footer {
-	
+	position: fixed;
+	background-color: white;
+	border-radius: 25px;
+	padding: 10px;
+	margin: 15px;
 }
 

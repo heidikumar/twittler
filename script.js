@@ -3,6 +3,7 @@
         //$body.html('');
 
         function refreshTweets (){
+          //removeTweets();
           var index = streams.home.length - 1;
 
           while(index >= 0){
@@ -11,15 +12,17 @@
             var $tweetDate = $('<div></div>');
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
             $tweetDate.text(tweet.created_at);
-            $tweet.appendTo(".displayTweets");
-            $tweetDate.appendTo(".tweetDates")
+            $tweet.appendTo(".tweetList");
+            $tweetDate.prependTo(".tweetDates")
             index -= 1;
           }
         };
+
         refreshTweets();
 
         function removeTweets (){
-          $body.remove('tweet');    //not working yet, have to find right way to reference tweets.
+          $(".tweetList").empty();
+          $(".tweetDates").empty();
         }
 
         $('.refresh').click(function(event){

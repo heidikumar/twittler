@@ -13,7 +13,7 @@
             var minutes = convertTime(tweet.created_at);
             $tweet.text('@' + tweet.user + ': ' + tweet.message);
             $tweetDate.text(minutes + " minutes ago");
-            $tweet.appendTo(".tweetList");
+            $tweet.prependTo(".tweetList");
             $tweetDate.prependTo(".tweetDates")
             index -= 1;
           }
@@ -34,12 +34,28 @@
           return seconds;
         }
 
+        function displayUserTweets(){
+          var $tweet = $('<div></div>');
+          var $divider = $('<div>-----</div>')
+          var myArray = streams.users.shawndrost;
+          for (var i=0; i<myArray.length; i++){
+            $tweet.text("" + myArray[i].message);
+            $divider.prependTo(".userTweets");
+            $tweet.prependTo(".userTweets");
+          };
+        }
+
         $('.refresh').click(function(event){
           refreshTweets();
           });
 
         $('.clear').click(function(event){
           removeTweets();
+        })
+
+        $('.testButton').click(function(event){
+          console.log("Button works!")
+          displayUserTweets();
         })
 
       });

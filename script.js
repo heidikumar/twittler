@@ -3,11 +3,11 @@
         //$body.html('');
 
         function refreshTweets (){
-          //removeTweets();
+          removeTweets();
           var index = streams.home.length - 1;
 
-          while(index >= 0){
-            var tweet = streams.home[index];
+          for (var j=0; j<=index; j++){
+            var tweet = streams.home[j];
             var $tweet = $('<div></div>');
             var $tweetDate = $('<div></div>');
             var minutes = convertTime(tweet.created_at);
@@ -15,7 +15,7 @@
             $tweetDate.text(minutes + " minutes ago");
             $tweet.prependTo(".tweetList");
             $tweetDate.prependTo(".tweetDates")
-            index -= 1;
+            //index -= 1;
           }
         };
 

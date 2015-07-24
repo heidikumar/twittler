@@ -9,13 +9,22 @@
           for (var j=0; j<=index; j++){
             var tweet = streams.home[j];
             var $tweet = $('<div></div>');
+            var $tweet2 = $('<div></div>');
             var $tweetDate = $('<div></div>');
+            var $empty = $('<p> <br> </p>')
             var minutes = convertTime(tweet.created_at);
-            $tweet.text('@' + tweet.user + ': ' + tweet.message);
+            var $user = $("<button/>", {
+              html: "" + tweet.user + "", 
+              "class": "user"
+            });
+            $tweet.text('@'); 
+            $user.appendTo($tweet);
+            $tweet2.text(': ' + tweet.message);
+            $tweet2.appendTo($tweet);
             $tweetDate.text(minutes + " minutes ago");
             $tweet.prependTo(".tweetList");
-            $tweetDate.prependTo(".tweetDates")
-            //index -= 1;
+            $empty.prependTo(".tweetDates");
+            $tweetDate.prependTo(".tweetDates");
           }
         };
 
@@ -61,6 +70,11 @@
 
         $('.testButton').click(function(event){
           displayUserTweets('shawndrost');
+        })
+
+        $('.user').click(function(event){
+          var name = button.text();
+          displayUserTweets(name);
         })
 
       });

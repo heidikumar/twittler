@@ -87,6 +87,11 @@ section {
 .tweetDates {
 	display: inline-block;
 	float: right;
+	padding-top: 17px;
+}
+
+.tweetDates p {
+	padding-bottom: 2px;
 }
 
 .tweetList {
@@ -94,12 +99,15 @@ section {
 	float: left;
 }
 
-/*	display: inline-block;
-	float: left;
-	width: 50%;
-	height: 1px;
-	background-color: black;
-}*/
+.tweetList a {
+	text-decoration: underline;
+}
+
+.user {
+	background-color: #C2D9F2;
+	border-radius: 4px;
+	padding: 1px;
+}
 
 section h3 {
 	font-weight: bold;

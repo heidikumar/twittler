@@ -17,19 +17,22 @@
       <div class="tweetList"></div>
       <div class="tweetDates"></div>
       </section>
-        <!-- Gotta move the tweets to here from the body. Also need to reverse order tweets appear so the new ones are on top. According to spects, need to add timestamps. I'd like timestamps to show in the same element area, but with a different CSS style.-->
-
-
 
       <aside class= "userTweets">
       <div class="selectUser"></div>
       <div class="selectTweets"></div>
-        <!-- this is where I will display the data for the user clicked on-->
       </aside>
     </div>
 
     <footer class="addTweet">
       <h4>Add a tweet!</h4>
+      <form>
+      <p>Username:</p>
+      <input type="text" id="login">
+      <p>Tweet:</p>
+      <input type="text" id="newTweet">
+      <button type="button" class="newTweet">Send Tweet!</button>
+      </form>
       <!-- I want this to be visible even with scrolling. This will be the form to enter new tweets. -->
     </footer>
 

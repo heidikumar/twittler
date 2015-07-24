@@ -8,28 +8,32 @@
 
           for (var j=0; j<=index; j++){
             var tweet = streams.home[j];
+            addTweet(tweet.user, tweet.message, tweet.created_at);
+          }
+        };
+
+        refreshTweets();
+
+        function addTweet(person, message, date){
             var $tweet = $('<div></div>');
             var $tweet2 = $('<p></p>');
             var $tweetDate = $('<div></div>');
-            var $empty = $('<p> <br> </p>')
-            var minutes = convertTime(tweet.created_at);
+            var $empty = $('<p> <br> </p>');
+            var minutes = convertTime(date);
             var $user = $("<button/>", {
-              html: "" + tweet.user + "", 
+              html: "" + person + "", 
               "class": "user", 
-              "name": "" + tweet.user + ""
+              "name": "" + person + ""
             });
             $tweet.text('@'); 
             $user.appendTo($tweet);
-            $tweet2.text(': ' + tweet.message);
+            $tweet2.text(': ' + message);
             $tweet2.appendTo($tweet);
             $tweetDate.text(minutes + " minutes ago");
             $tweet.prependTo(".tweetList");
             $empty.prependTo(".tweetDates");
             $tweetDate.prependTo(".tweetDates");
-          }
         };
-
-        refreshTweets();
 
         function removeTweets (){
           $(".tweetList").empty();
@@ -72,6 +76,19 @@
         $('.user').click(function(event){
           var name = this.name;
           displayUserTweets(name);
-        })
+        });
+
+        /*$('.newTweet').click(function(event){
+          var name = $('#login').val();
+          var message = $('#newTweet').val();
+          var minutes = new Date();
+          minutes = convertTime(time);
+          var $tweet = $('<div></div>');
+          var $tweetDate = $('<div></div>');
+          $tweetDate.text(minutes + " minutes ago");
+          $tweet.text("@" +name + ":" +message+);
+          $tweet.prependTo(".tweetList");
+          $tweetDate.prependTo(".tweetDates");
+        })*/
 
       });

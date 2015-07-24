@@ -142,3 +142,11 @@ footer {
 	width: 96%;
 }
 
+footer h4{
+	font-weight: bold;
+}
+
+form p{
+	display: inline-block;
+}
+

@@ -69,10 +69,6 @@
           removeTweets();
         })
 
-        $('.testButton').click(function(event){
-          displayUserTweets('shawndrost');
-        })
-
         $('.user').click(function(event){
           var name = this.name;
           displayUserTweets(name);

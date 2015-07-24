@@ -105,8 +105,9 @@ section {
 
 .user {
 	background-color: #C2D9F2;
-	border-radius: 4px;
+	border-radius: 6px;
 	padding: 1px;
+	font-style: Andale Mono, monospace;
 }
 
 section h3 {

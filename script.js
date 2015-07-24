@@ -24,6 +24,7 @@
         function removeTweets (){
           $(".tweetList").empty();
           $(".tweetDates").empty();
+          $(".selectTweets").empty();
         }
 
         function convertTime(date){
@@ -34,15 +35,15 @@
           return seconds;
         }
 
-        function displayUserTweets(){
-          var $tweet = $('<div></div>');
-          var $divider = $('<div>-----</div>')
-          var myArray = streams.users.shawndrost;
-          for (var i=0; i<myArray.length; i++){
-            $tweet.text("" + myArray[i].message);
-            $divider.prependTo(".userTweets");
-            $tweet.prependTo(".userTweets");
-          };
+        function displayUserTweets(username){
+          var userArray = streams.users[username];
+          var $tweet; 
+          $(".selectTweets").empty();
+            for (var x=0; x<userArray.length; x++){
+              $tweet = $('<div></div>');
+              $tweet.text("- " + userArray[x].message);
+              $tweet.appendTo(".selectTweets");
+            };
         }
 
         $('.refresh').click(function(event){
@@ -54,8 +55,7 @@
         })
 
         $('.testButton').click(function(event){
-          console.log("Button works!")
-          displayUserTweets();
+          displayUserTweets('shawndrost');
         })
 
       });

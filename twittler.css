@@ -94,7 +94,7 @@ section {
 	float: left;
 }
 
-//*	display: inline-block;
+/*	display: inline-block;
 	float: left;
 	width: 50%;
 	height: 1px;
@@ -115,6 +115,7 @@ aside {
 	margin-right: 1%;
 	border-radius: 25px;
 	padding: 1%;
+	overflow: auto;
 }
 
 footer {
@@ -123,5 +124,6 @@ footer {
 	border-radius: 25px;
 	padding: 10px;
 	margin: 1%;
+	width: 96%;
 }
 

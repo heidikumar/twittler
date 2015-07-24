@@ -25,6 +25,7 @@
           $(".tweetList").empty();
           $(".tweetDates").empty();
           $(".selectTweets").empty();
+          $(".selectUser").empty();
         }
 
         function convertTime(date){
@@ -38,7 +39,11 @@
         function displayUserTweets(username){
           var userArray = streams.users[username];
           var $tweet; 
+          var $user = $('<div></div>');
+          $user.text(username);
           $(".selectTweets").empty();
+          $(".selectUser").empty();
+          $user.appendTo(".selectUser")
             for (var x=0; x<userArray.length; x++){
               $tweet = $('<div></div>');
               $tweet.text("- " + userArray[x].message);

@@ -9,13 +9,14 @@
           for (var j=0; j<=index; j++){
             var tweet = streams.home[j];
             var $tweet = $('<div></div>');
-            var $tweet2 = $('<div></div>');
+            var $tweet2 = $('<p></p>');
             var $tweetDate = $('<div></div>');
             var $empty = $('<p> <br> </p>')
             var minutes = convertTime(tweet.created_at);
             var $user = $("<button/>", {
               html: "" + tweet.user + "", 
-              "class": "user"
+              "class": "user", 
+              "name": "" + tweet.user + ""
             });
             $tweet.text('@'); 
             $user.appendTo($tweet);
@@ -73,7 +74,7 @@
         })
 
         $('.user').click(function(event){
-          var name = button.text();
+          var name = this.name;
           displayUserTweets(name);
         })
 
